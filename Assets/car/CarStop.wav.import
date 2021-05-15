@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CarStop.wav-5908675b0f8ead64867c94d815a3bc58.sample"
+
+[deps]
+
+source_file="res://Assets/car/CarStop.wav"
+dest_files=[ "res://.import/CarStop.wav-5908675b0f8ead64867c94d815a3bc58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

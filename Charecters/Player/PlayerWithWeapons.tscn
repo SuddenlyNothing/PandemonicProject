@@ -1,0 +1,363 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Assets/player/weapons/CircleInner.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/ProgressUnder.png" type="Texture" id=2]
+[ext_resource path="res://Charecters/Dust.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/player/weapons/Rocket Launcher.png" type="Texture" id=4]
+[ext_resource path="res://Assets/SFX/CircleRestart.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/SFX/CirclePerfect.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/player/weapons/Bigger Sword.png" type="Texture" id=7]
+[ext_resource path="res://Assets/player/weapons/Sword.png" type="Texture" id=8]
+[ext_resource path="res://Assets/player/weapons/stick.png" type="Texture" id=9]
+[ext_resource path="res://Assets/player/weapons/Wand.png" type="Texture" id=10]
+[ext_resource path="res://Assets/player/Hand.png" type="Texture" id=11]
+[ext_resource path="res://Assets/SFX/CircleRelease.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/player/Torso.png" type="Texture" id=13]
+[ext_resource path="res://Assets/player/Eye.png" type="Texture" id=14]
+[ext_resource path="res://Assets/player/weapons/Gun.png" type="Texture" id=15]
+[ext_resource path="res://Assets/UI/ProgressOver.png" type="Texture" id=16]
+[ext_resource path="res://Charecters/Player/Player.gd" type="Script" id=17]
+[ext_resource path="res://Charecters/BaseSpriteBounce.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/SFX/BarDecreaseLong.wav" type="AudioStream" id=19]
+[ext_resource path="res://Assets/SFX/BarIncreaseLong.wav" type="AudioStream" id=20]
+[ext_resource path="res://Assets/player/Head.png" type="Texture" id=21]
+[ext_resource path="res://Assets/UI/Progress.png" type="Texture" id=22]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.24504
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPoints/Torso:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPoints/Torso:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Run"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodyPoints/Torso:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodyPoints/Torso:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 20.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2, 2 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 2, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 11.5, 2 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 45, 2 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 64.0
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 4, 10 )
+
+[node name="PlayerWithWeapons" type="KinematicBody2D"]
+collision_mask = 2
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="BodyPoints" type="Node2D" parent="Body"]
+
+[node name="Torso" type="Position2D" parent="Body/BodyPoints"]
+position = Vector2( 0, -1.42875 )
+
+[node name="Torso" type="Sprite" parent="Body/BodyPoints/Torso"]
+texture = ExtResource( 13 )
+
+[node name="Head" type="Position2D" parent="Body/BodyPoints/Torso"]
+position = Vector2( 0, -10 )
+
+[node name="LeftEye" type="Position2D" parent="Body/BodyPoints/Torso/Head"]
+position = Vector2( -1.91007, -1.69178 )
+
+[node name="RightEye" type="Position2D" parent="Body/BodyPoints/Torso/Head"]
+position = Vector2( 1.96465, 0.163721 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
+anims/Idle = SubResource( 2 )
+anims/Run = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Tween" type="Tween" parent="Body"]
+
+[node name="SpringySprites" type="Node2D" parent="Body"]
+
+[node name="Head" parent="Body/SpringySprites" instance=ExtResource( 18 )]
+position = Vector2( 0, -11.4288 )
+texture = ExtResource( 21 )
+stiffness = 4.0
+damping = 0.6
+target_node_path = NodePath("../../../../PlayerWithWeapons/Body/BodyPoints/Torso/Head")
+
+[node name="LeftEye" parent="Body/SpringySprites" instance=ExtResource( 18 )]
+position = Vector2( -1.91007, -13.1205 )
+texture = ExtResource( 14 )
+stiffness = 3.0
+damping = 0.6
+target_node_path = NodePath("../../../../PlayerWithWeapons/Body/BodyPoints/Torso/Head/LeftEye")
+
+[node name="RightEye" parent="Body/SpringySprites" instance=ExtResource( 18 )]
+position = Vector2( 1.96465, -11.265 )
+texture = ExtResource( 14 )
+stiffness = 3.0
+damping = 0.6
+target_node_path = NodePath("../../../../PlayerWithWeapons/Body/BodyPoints/Torso/Head/RightEye")
+
+[node name="Collisions" type="Node2D" parent="Body"]
+
+[node name="Attack" type="Node2D" parent="."]
+
+[node name="AttackCharge" type="TextureProgress" parent="Attack"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 75.0
+margin_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+step = 0.01
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 16 )
+texture_progress = ExtResource( 22 )
+tint_progress = Color( 1, 0.784314, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackTimer" type="Timer" parent="Attack"]
+one_shot = true
+
+[node name="Weapons" type="Node2D" parent="Attack"]
+
+[node name="Fists" type="Node2D" parent="Attack/Weapons"]
+
+[node name="LeftArm" type="Position2D" parent="Attack/Weapons/Fists"]
+position = Vector2( -7.35967, -2.6787 )
+rotation = 0.00538927
+
+[node name="RightArm" type="Position2D" parent="Attack/Weapons/Fists"]
+position = Vector2( 6.49004, 0.799019 )
+rotation = 0.00538927
+
+[node name="LeftArmSprite" parent="Attack/Weapons/Fists" instance=ExtResource( 18 )]
+visible = false
+position = Vector2( -7.35967, -2.6787 )
+texture = ExtResource( 11 )
+stiffness = 4.2
+damping = 0.6
+target_node_path = NodePath("../../../../../PlayerWithWeapons/Attack/Weapons/Fists/LeftArm")
+
+[node name="LeftHitbox" type="Area2D" parent="Attack/Weapons/Fists/LeftArmSprite"]
+position = Vector2( -0.0545774, -0.0545733 )
+rotation = 0.00538927
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Weapons/Fists/LeftArmSprite/LeftHitbox"]
+shape = SubResource( 4 )
+disabled = true
+
+[node name="RightArmSprite" parent="Attack/Weapons/Fists" instance=ExtResource( 18 )]
+visible = false
+position = Vector2( 6.49004, 0.799019 )
+texture = ExtResource( 11 )
+stiffness = 4.2
+damping = 0.6
+target_node_path = NodePath("../../../../../PlayerWithWeapons/Attack/Weapons/Fists/RightArm")
+
+[node name="RightHitbox" type="Area2D" parent="Attack/Weapons/Fists/RightArmSprite"]
+position = Vector2( 4.76837e-07, 5.96046e-08 )
+rotation = 0.00538927
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Weapons/Fists/RightArmSprite/RightHitbox"]
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Stick" type="Node2D" parent="Attack/Weapons"]
+
+[node name="StickSprite" type="Sprite" parent="Attack/Weapons/Stick"]
+visible = false
+texture = ExtResource( 9 )
+offset = Vector2( 0, -10 )
+
+[node name="StickHitbox" type="Area2D" parent="Attack/Weapons/Stick/StickSprite"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Weapons/Stick/StickSprite/StickHitbox"]
+position = Vector2( 0, -10 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="Sword" type="Node2D" parent="Attack/Weapons"]
+
+[node name="SwordSprite" type="Sprite" parent="Attack/Weapons/Sword"]
+visible = false
+position = Vector2( 0.12146, 0 )
+texture = ExtResource( 8 )
+offset = Vector2( -8, -8 )
+
+[node name="SwordHitbox" type="Area2D" parent="Attack/Weapons/Sword/SwordSprite"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Weapons/Sword/SwordSprite/SwordHitbox"]
+position = Vector2( -8, -8 )
+rotation = 0.785398
+shape = SubResource( 6 )
+disabled = true
+
+[node name="BiggerSword" type="Node2D" parent="Attack/Weapons"]
+
+[node name="BiggerSwordSprite" type="Sprite" parent="Attack/Weapons/BiggerSword"]
+visible = false
+texture = ExtResource( 7 )
+offset = Vector2( -32, -32 )
+
+[node name="BiggerSwordHitbox" type="Area2D" parent="Attack/Weapons/BiggerSword/BiggerSwordSprite"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Weapons/BiggerSword/BiggerSwordSprite/BiggerSwordHitbox"]
+position = Vector2( -32, -32 )
+rotation = 0.785398
+shape = SubResource( 7 )
+disabled = true
+
+[node name="Circle" type="Node2D" parent="Attack/Weapons"]
+
+[node name="CircleInner" type="Sprite" parent="Attack/Weapons/Circle"]
+visible = false
+texture = ExtResource( 1 )
+
+[node name="CircleHitbox" type="Area2D" parent="Attack/Weapons/Circle/CircleInner"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Weapons/Circle/CircleInner/CircleHitbox"]
+shape = SubResource( 8 )
+disabled = true
+
+[node name="CircleTimer" type="Timer" parent="Attack/Weapons/Circle"]
+wait_time = 0.05
+one_shot = true
+
+[node name="WandSprite" type="Sprite" parent="Attack/Weapons"]
+visible = false
+texture = ExtResource( 10 )
+offset = Vector2( -4, -4 )
+
+[node name="WandPosition" type="Position2D" parent="Attack/Weapons/WandSprite"]
+position = Vector2( -8, -8 )
+
+[node name="GunSprite" type="Sprite" parent="Attack/Weapons"]
+visible = false
+position = Vector2( 0, -2 )
+texture = ExtResource( 15 )
+offset = Vector2( 2, 0 )
+
+[node name="GunPosition" type="Position2D" parent="Attack/Weapons/GunSprite"]
+position = Vector2( 6, 0 )
+
+[node name="RocketLauncher" type="Sprite" parent="Attack/Weapons"]
+visible = false
+position = Vector2( 0, -5 )
+texture = ExtResource( 4 )
+offset = Vector2( 5, 0 )
+
+[node name="RocketPosition" type="Position2D" parent="Attack/Weapons/RocketLauncher"]
+position = Vector2( 13, 0 )
+
+[node name="Dust" parent="." instance=ExtResource( 3 )]
+show_behind_parent = true
+position = Vector2( 0, 4 )
+emitting = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -5 )
+shape = SubResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="BarIncrease" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 20 )
+volume_db = -10.0
+
+[node name="BarDecrease" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 19 )
+
+[node name="BarPerfect" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )
+
+[node name="BarRelease" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 12 )
+
+[node name="BarRestart" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 5 )

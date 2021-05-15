@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CarOpen.wav-435c38ca32f701a6265545b8a1efe562.sample"
+
+[deps]
+
+source_file="res://Assets/car/CarOpen.wav"
+dest_files=[ "res://.import/CarOpen.wav-435c38ca32f701a6265545b8a1efe562.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

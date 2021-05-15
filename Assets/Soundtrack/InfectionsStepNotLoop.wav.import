@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/InfectionsStepNotLoop.wav-a6a149af61bfaa57a48f5ec8db77fe04.sample"
+
+[deps]
+
+source_file="res://Assets/Soundtrack/InfectionsStepNotLoop.wav"
+dest_files=[ "res://.import/InfectionsStepNotLoop.wav-a6a149af61bfaa57a48f5ec8db77fe04.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

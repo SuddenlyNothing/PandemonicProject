@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Fonts/Comfortaa.tres" type="DynamicFont" id=1]
+
+[node name="Continue" type="Button"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 52.0
+margin_right = 576.0
+margin_bottom = 212.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 1 )
+action_mode = 0
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": true
+}

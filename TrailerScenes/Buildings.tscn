@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/tiles/groceryStore.png" type="Texture" id=1]
+[ext_resource path="res://Props/Supermarket.gd" type="Script" id=2]
+[ext_resource path="res://Props/HouseLarge.gd" type="Script" id=3]
+[ext_resource path="res://Assets/tiles/midHouse.png" type="Texture" id=4]
+[ext_resource path="res://Assets/tiles/bigHouse.png" type="Texture" id=5]
+[ext_resource path="res://Props/HouseSmall.gd" type="Script" id=6]
+[ext_resource path="res://Assets/tiles/House.png" type="Texture" id=7]
+[ext_resource path="res://Props/HouseMedium.gd" type="Script" id=8]
+[ext_resource path="res://Props/HouseSmall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Props/Supermarket.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Props/HouseLarge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Props/HouseMedium.tscn" type="PackedScene" id=12]
+
+[node name="Buildings" type="YSort"]
+z_index = -200
+
+[node name="Supermarket" type="Sprite" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1244, -1640 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -53 )
+script = ExtResource( 2 )
+
+[node name="HouseSmall" type="Sprite" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1652, -1068 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -25 )
+script = ExtResource( 6 )
+
+[node name="HouseSmall2" type="Sprite" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1664, -244 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -25 )
+script = ExtResource( 6 )
+
+[node name="HouseSmall3" type="Sprite" parent="." instance=ExtResource( 9 )]
+position = Vector2( 268, -116 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -25 )
+script = ExtResource( 6 )
+
+[node name="HouseMedium" type="Sprite" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1092, -188 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -35 )
+script = ExtResource( 8 )
+
+[node name="HouseMedium2" type="Sprite" parent="." instance=ExtResource( 12 )]
+position = Vector2( 596, -884 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -35 )
+script = ExtResource( 8 )
+
+[node name="HouseMedium3" type="Sprite" parent="." instance=ExtResource( 12 )]
+position = Vector2( -944, 36 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -35 )
+script = ExtResource( 8 )
+
+[node name="HouseLarge" type="Sprite" parent="." instance=ExtResource( 11 )]
+position = Vector2( -596, -812 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -46 )
+script = ExtResource( 3 )

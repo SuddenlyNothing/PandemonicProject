@@ -1,0 +1,352 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/TrailerProps/HeadEyes.png" type="Texture" id=1]
+[ext_resource path="res://Assets/TrailerProps/Eye.png" type="Texture" id=2]
+[ext_resource path="res://Assets/TrailerProps/HandOL.png" type="Texture" id=3]
+[ext_resource path="res://Assets/TrailerProps/Chair.png" type="Texture" id=4]
+[ext_resource path="res://TrailerScenes/Node2D.gd" type="Script" id=5]
+[ext_resource path="res://Assets/TrailerProps/TestRoom.png" type="Texture" id=6]
+[ext_resource path="res://Assets/TrailerProps/TorsoOL.png" type="Texture" id=7]
+[ext_resource path="res://TrailerScenes/Good.gd" type="Script" id=8]
+[ext_resource path="res://Assets/player/weapons/projectiles/Hand_SanitizerGreen.png" type="Texture" id=9]
+[ext_resource path="res://TrailerScenes/testRoom.gd" type="Script" id=10]
+[ext_resource path="res://Assets/GuyGood/GoodGuyArm.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GuyGood/GoodGuyTorso.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GuyGood/HeadEyes.png" type="Texture" id=13]
+
+[node name="testRoom" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="TestRoom" type="Sprite" parent="."]
+position = Vector2( -1.53296, 0 )
+texture = ExtResource( 6 )
+
+[node name="Chair" type="Sprite" parent="."]
+position = Vector2( -1.53296, 0 )
+texture = ExtResource( 4 )
+
+[node name="Scientist" type="Node2D" parent="."]
+position = Vector2( -56.5737, 1.45214 )
+
+[node name="GoodGuyArm3" type="Sprite" parent="Scientist"]
+position = Vector2( -7.09673, -0.286419 )
+texture = ExtResource( 11 )
+
+[node name="GoodGuyArm4" type="Sprite" parent="Scientist"]
+position = Vector2( 3.1968, 0.0921211 )
+texture = ExtResource( 11 )
+
+[node name="HeadEyes2" type="Sprite" parent="Scientist"]
+position = Vector2( -1.39807, -5.81288 )
+texture = ExtResource( 13 )
+
+[node name="GoodGuyTorso2" type="Sprite" parent="Scientist"]
+position = Vector2( -1.39807, 2.18712 )
+texture = ExtResource( 12 )
+
+[node name="Good" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 8 )
+
+[node name="GoodGuyArm" type="Sprite" parent="Good"]
+position = Vector2( -12.6538, 0.506615 )
+texture = ExtResource( 11 )
+
+[node name="GoodGuyArm2" type="Sprite" parent="Good"]
+position = Vector2( 9.52327, 0.0354786 )
+texture = ExtResource( 11 )
+
+[node name="HeadEyes" type="Sprite" parent="Good"]
+position = Vector2( -1.61276, -8.0363 )
+texture = ExtResource( 13 )
+
+[node name="GoodGuyTorso" type="Sprite" parent="Good"]
+position = Vector2( -1.68353, 1.92987 )
+texture = ExtResource( 12 )
+
+[node name="Bad" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="HandOL" type="Sprite" parent="Bad"]
+position = Vector2( -12.7432, 0.216643 )
+texture = ExtResource( 3 )
+
+[node name="HandOL2" type="Sprite" parent="Bad"]
+position = Vector2( 9.37873, 0.0575066 )
+texture = ExtResource( 3 )
+
+[node name="HeadEyes" type="Sprite" parent="Bad"]
+position = Vector2( -1.89009, -9.3467 )
+texture = ExtResource( 1 )
+
+[node name="TorsoOL" type="Sprite" parent="Bad"]
+position = Vector2( -1.64688, 2.77337 )
+texture = ExtResource( 7 )
+
+[node name="Pixels" type="Node2D" parent="."]
+
+[node name="Pixel" type="Sprite" parent="Pixels"]
+position = Vector2( -14.7461, 0.229839 )
+texture = ExtResource( 2 )
+
+[node name="Pixel2" type="Sprite" parent="Pixels"]
+position = Vector2( -13.7796, 0.0315886 )
+texture = ExtResource( 2 )
+
+[node name="Pixel3" type="Sprite" parent="Pixels"]
+position = Vector2( -13.0609, -0.0675373 )
+texture = ExtResource( 2 )
+
+[node name="Pixel4" type="Sprite" parent="Pixels"]
+position = Vector2( -12.0449, -0.0675373 )
+texture = ExtResource( 2 )
+
+[node name="Pixel5" type="Sprite" parent="Pixels"]
+position = Vector2( -11.3417, 0.208718 )
+texture = ExtResource( 2 )
+
+[node name="Pixel6" type="Sprite" parent="Pixels"]
+position = Vector2( -10.7138, 0.409632 )
+texture = ExtResource( 2 )
+
+[node name="Pixel7" type="Sprite" parent="Pixels"]
+position = Vector2( 7.44367, 0.183604 )
+texture = ExtResource( 2 )
+
+[node name="Pixel8" type="Sprite" parent="Pixels"]
+position = Vector2( 8.17198, -0.0675383 )
+texture = ExtResource( 2 )
+
+[node name="Pixel9" type="Sprite" parent="Pixels"]
+position = Vector2( 9.05097, -0.293565 )
+texture = ExtResource( 2 )
+
+[node name="Pixel10" type="Sprite" parent="Pixels"]
+position = Vector2( 9.87974, -0.343793 )
+texture = ExtResource( 2 )
+
+[node name="Pixel11" type="Sprite" parent="Pixels"]
+position = Vector2( 10.6332, -0.218223 )
+texture = ExtResource( 2 )
+
+[node name="Pixel12" type="Sprite" parent="Pixels"]
+position = Vector2( 11.1354, 0.108262 )
+texture = ExtResource( 2 )
+
+[node name="Pixel13" type="Sprite" parent="Pixels"]
+position = Vector2( -10.086, 4.65392 )
+texture = ExtResource( 2 )
+
+[node name="Pixel14" type="Sprite" parent="Pixels"]
+position = Vector2( -9.0312, 4.87994 )
+texture = ExtResource( 2 )
+
+[node name="Pixel15" type="Sprite" parent="Pixels"]
+position = Vector2( -8.17732, 5.18131 )
+texture = ExtResource( 2 )
+
+[node name="Pixel16" type="Sprite" parent="Pixels"]
+position = Vector2( -7.44901, 5.43246 )
+texture = ExtResource( 2 )
+
+[node name="Pixel17" type="Sprite" parent="Pixels"]
+position = Vector2( -6.69559, 5.75894 )
+texture = ExtResource( 2 )
+
+[node name="Pixel18" type="Sprite" parent="Pixels"]
+position = Vector2( -5.89194, 6.08543 )
+texture = ExtResource( 2 )
+
+[node name="Pixel19" type="Sprite" parent="Pixels"]
+position = Vector2( -5.1134, 6.211 )
+texture = ExtResource( 2 )
+
+[node name="Pixel20" type="Sprite" parent="Pixels"]
+position = Vector2( -4.08372, 6.33657 )
+texture = ExtResource( 2 )
+
+[node name="Pixel21" type="Sprite" parent="Pixels"]
+position = Vector2( -4.61111, 6.31145 )
+texture = ExtResource( 2 )
+
+[node name="Pixel22" type="Sprite" parent="Pixels"]
+position = Vector2( -3.43075, 6.48725 )
+texture = ExtResource( 2 )
+
+[node name="Pixel23" type="Sprite" parent="Pixels"]
+position = Vector2( -2.6271, 6.56259 )
+texture = ExtResource( 2 )
+
+[node name="Pixel24" type="Sprite" parent="Pixels"]
+position = Vector2( -1.69787, 6.61282 )
+texture = ExtResource( 2 )
+
+[node name="Pixel25" type="Sprite" parent="Pixels"]
+position = Vector2( -0.668192, 6.58771 )
+texture = ExtResource( 2 )
+
+[node name="Pixel26" type="Sprite" parent="Pixels"]
+position = Vector2( 0.0350037, 6.51236 )
+texture = ExtResource( 2 )
+
+[node name="Pixel27" type="Sprite" parent="Pixels"]
+position = Vector2( 0.888884, 6.38679 )
+texture = ExtResource( 2 )
+
+[node name="Pixel28" type="Sprite" parent="Pixels"]
+position = Vector2( -0.869104, 6.56259 )
+texture = ExtResource( 2 )
+
+[node name="Pixel29" type="Sprite" parent="Pixels"]
+position = Vector2( 1.76788, 6.16077 )
+texture = ExtResource( 2 )
+
+[node name="Pixel30" type="Sprite" parent="Pixels"]
+position = Vector2( 2.54642, 6.01008 )
+texture = ExtResource( 2 )
+
+[node name="Pixel31" type="Sprite" parent="Pixels"]
+position = Vector2( 3.2245, 5.90963 )
+texture = ExtResource( 2 )
+
+[node name="Pixel32" type="Sprite" parent="Pixels"]
+position = Vector2( 4.07838, 5.83428 )
+texture = ExtResource( 2 )
+
+[node name="Pixel33" type="Sprite" parent="Pixels"]
+position = Vector2( 4.93226, 5.70871 )
+texture = ExtResource( 2 )
+
+[node name="Pixel34" type="Sprite" parent="Pixels"]
+position = Vector2( 5.38431, 5.63337 )
+texture = ExtResource( 2 )
+
+[node name="Pixel35" type="Sprite" parent="Pixels"]
+position = Vector2( 5.98705, 5.30689 )
+texture = ExtResource( 2 )
+
+[node name="Pixel36" type="Sprite" parent="Pixels"]
+position = Vector2( 6.46422, 4.80461 )
+texture = ExtResource( 2 )
+
+[node name="Pixel37" type="Sprite" parent="Pixels"]
+position = Vector2( -9.30745, 4.80461 )
+texture = ExtResource( 2 )
+
+[node name="Pixel38" type="Sprite" parent="Pixels"]
+position = Vector2( 6.91627, 4.42789 )
+texture = ExtResource( 2 )
+
+[node name="Pixel39" type="Sprite" parent="Pixels"]
+position = Vector2( -9.98553, -0.167991 )
+texture = ExtResource( 2 )
+
+[node name="Pixel40" type="Sprite" parent="Pixels"]
+position = Vector2( -9.28234, 0.133378 )
+texture = ExtResource( 2 )
+
+[node name="Pixel41" type="Sprite" parent="Pixels"]
+position = Vector2( -8.47869, 0.384519 )
+texture = ExtResource( 2 )
+
+[node name="Pixel42" type="Sprite" parent="Pixels"]
+position = Vector2( -7.64992, 0.635659 )
+texture = ExtResource( 2 )
+
+[node name="Pixel43" type="Sprite" parent="Pixels"]
+position = Vector2( -6.94673, 0.861686 )
+texture = ExtResource( 2 )
+
+[node name="Pixel44" type="Sprite" parent="Pixels"]
+position = Vector2( -6.31887, 1.16305 )
+texture = ExtResource( 2 )
+
+[node name="Pixel45" type="Sprite" parent="Pixels"]
+position = Vector2( -5.69102, 1.4142 )
+texture = ExtResource( 2 )
+
+[node name="Pixel46" type="Sprite" parent="Pixels"]
+position = Vector2( -4.9376, 1.66534 )
+texture = ExtResource( 2 )
+
+[node name="Pixel47" type="Sprite" parent="Pixels"]
+position = Vector2( -4.18418, 1.64022 )
+texture = ExtResource( 2 )
+
+[node name="Pixel48" type="Sprite" parent="Pixels"]
+position = Vector2( -3.50609, 1.79091 )
+texture = ExtResource( 2 )
+
+[node name="Pixel49" type="Sprite" parent="Pixels"]
+position = Vector2( -2.92847, 1.91648 )
+texture = ExtResource( 2 )
+
+[node name="Pixel50" type="Sprite" parent="Pixels"]
+position = Vector2( -2.04947, 2.01693 )
+texture = ExtResource( 2 )
+
+[node name="Pixel51" type="Sprite" parent="Pixels"]
+position = Vector2( -1.52208, 2.1425 )
+texture = ExtResource( 2 )
+
+[node name="Pixel52" type="Sprite" parent="Pixels"]
+position = Vector2( -0.843997, 2.16762 )
+texture = ExtResource( 2 )
+
+[node name="Pixel53" type="Sprite" parent="Pixels"]
+position = Vector2( 0.00988293, 2.04205 )
+texture = ExtResource( 2 )
+
+[node name="Pixel54" type="Sprite" parent="Pixels"]
+position = Vector2( 1.01445, 1.74068 )
+texture = ExtResource( 2 )
+
+[node name="Pixel55" type="Sprite" parent="Pixels"]
+position = Vector2( 1.56696, 1.59 )
+texture = ExtResource( 2 )
+
+[node name="Pixel56" type="Sprite" parent="Pixels"]
+position = Vector2( 2.49618, 1.4142 )
+texture = ExtResource( 2 )
+
+[node name="Pixel57" type="Sprite" parent="Pixels"]
+position = Vector2( 3.14915, 1.21328 )
+texture = ExtResource( 2 )
+
+[node name="Pixel58" type="Sprite" parent="Pixels"]
+position = Vector2( 3.90257, 0.911914 )
+texture = ExtResource( 2 )
+
+[node name="Pixel59" type="Sprite" parent="Pixels"]
+position = Vector2( 4.85691, 0.685885 )
+texture = ExtResource( 2 )
+
+[node name="Pixel60" type="Sprite" parent="Pixels"]
+position = Vector2( 5.68568, 0.484971 )
+texture = ExtResource( 2 )
+
+[node name="Pixel61" type="Sprite" parent="Pixels"]
+position = Vector2( 6.33864, 0.334287 )
+texture = ExtResource( 2 )
+
+[node name="Pixel62" type="Sprite" parent="Pixels"]
+position = Vector2( 6.71536, 0.158488 )
+texture = ExtResource( 2 )
+
+[node name="Pixel63" type="Sprite" parent="Pixels"]
+position = Vector2( 6.71536, 0.158488 )
+texture = ExtResource( 2 )
+
+[node name="Hand_SanitizerGreen" type="Sprite" parent="."]
+position = Vector2( -50, 0 )
+rotation = -1.5708
+texture = ExtResource( 9 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -50, 0 )
+rotation = -1.5708
+current = true
+zoom = Vector2( 0.05, 0.05 )
+[connection signal="completed" from="Bad" to="Good" method="_on_Bad_completed"]

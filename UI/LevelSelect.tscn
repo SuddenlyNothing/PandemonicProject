@@ -1,0 +1,154 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Fonts/Comfortaa.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/LevelSelect.gd" type="Script" id=2]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.552941, 0.74902, 0.223529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 128.0
+margin_right = -126.0
+margin_bottom = -126.0
+custom_constants/vseparation = 57
+custom_constants/hseparation = 60
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ColorRect/GridContainer"]
+margin_right = 339.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+
+[node name="Button2" type="Button" parent="ColorRect/GridContainer"]
+margin_left = 399.0
+margin_right = 738.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="Button3" type="Button" parent="ColorRect/GridContainer"]
+margin_left = 798.0
+margin_right = 1137.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "3"
+
+[node name="Button4" type="Button" parent="ColorRect/GridContainer"]
+margin_left = 1197.0
+margin_right = 1536.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "4"
+
+[node name="Button5" type="Button" parent="ColorRect/GridContainer"]
+margin_top = 206.0
+margin_right = 339.0
+margin_bottom = 355.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "5"
+
+[node name="Button6" type="Button" parent="ColorRect/GridContainer"]
+margin_left = 399.0
+margin_top = 206.0
+margin_right = 738.0
+margin_bottom = 355.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "6"
+
+[node name="Button7" type="Button" parent="ColorRect/GridContainer"]
+margin_left = 798.0
+margin_top = 206.0
+margin_right = 1137.0
+margin_bottom = 355.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "7"
+
+[node name="Button8" type="Button" parent="ColorRect/GridContainer"]
+margin_left = 1197.0
+margin_top = 206.0
+margin_right = 1536.0
+margin_bottom = 355.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Boss"
+
+[node name="Button9" type="Button" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 80.9999
+margin_top = 105.0
+margin_right = 702.0
+margin_bottom = 254.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="Button10" type="Button" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -703.0
+margin_top = 105.0
+margin_right = -82.0
+margin_bottom = 254.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+[connection signal="pressed" from="ColorRect/GridContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/Button8" to="." method="_on_Button8_pressed"]
+[connection signal="pressed" from="ColorRect/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="ColorRect/Button10" to="." method="_on_Button10_pressed"]

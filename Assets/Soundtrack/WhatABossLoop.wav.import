@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WhatABossLoop.wav-3a3d98e9f89fc1b826a50639a70e9129.sample"
+
+[deps]
+
+source_file="res://Assets/Soundtrack/WhatABossLoop.wav"
+dest_files=[ "res://.import/WhatABossLoop.wav-3a3d98e9f89fc1b826a50639a70e9129.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

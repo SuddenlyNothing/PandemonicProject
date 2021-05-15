@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/tiles/groceryStore.png" type="Texture" id=1]
+[ext_resource path="res://Props/Supermarket.gd" type="Script" id=2]
+[ext_resource path="res://Assets/tiles/groceryStoreBottom.png" type="Texture" id=3]
+
+
+[node name="Supermarket" type="Sprite"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -53 )
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"StaticBodies",
+]]
+position = Vector2( 0, -53 )
+collision_layer = 34
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -48, 53, -48, 56, 48, 56, 48, 53, 96, 53, 96, 40, -96, 40, -96, 53 )
+
+[node name="BuildingShow" type="Area2D" parent="."]
+visible = false
+position = Vector2( 0, -53 )
+collision_layer = 64
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingShow"]
+polygon = PoolVector2Array( -96, 40, -96, -6, -99, -9, -99, -20, -98, -21, -48, -21, -51, -24, -51, -39, -51, -40, 51, -40, 51, -24, 48, -21, 99, -21, 99, -8, 96, -5, 96, 40 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Bottom" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 0, -53 )
+[connection signal="area_entered" from="BuildingShow" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="BuildingShow" to="." method="_on_Area2D_area_exited"]

@@ -1,0 +1,410 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/GuyGood/GoodGuyArm.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GuyGood/GoodGuyEye.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GuyGood/GoodGuyHead.png" type="Texture" id=3]
+[ext_resource path="res://Charecters/BaseSpriteBounce.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Charecters/GoodGuy.gd" type="Script" id=5]
+[ext_resource path="res://Assets/GuyGood/GoodGuyTorso.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GuyGood/Shadow.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Celebrate"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Torso/LeftArm:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7.22618, -13.8122 ), Vector2( -7.31216, -15.4888 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Torso/RightArm:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.15919, -11.8702 ), Vector2( 7.63206, -13.6328 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Torso:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Torso:rotation_degrees")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fists"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -0.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Torso:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Torso/RightArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.259, 0.21 ), Vector2( 19.135, 0.21 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Torso/LeftArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 29.94, -3.108 ), Vector2( -5.63559, -3.10798 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Torso:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Torso:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Torso/LeftArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5.63559, -3.10798 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Torso/RightArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.74056, 0.209625 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Torso:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 1 ), Vector2( 0, -1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Torso:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 20.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Torso/RightArm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.74056, 0.209625 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Torso/LeftArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5.63559, -3.10798 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 4, 10 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "Get_sick"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 0.431373, 0, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="GoodGuy" type="Node2D" groups=[
+"good_guys",
+]]
+scale = Vector2( 2, 2 )
+script = ExtResource( 5 )
+
+[node name="Body" type="Node2D" parent="."]
+position = Vector2( 0, -5 )
+
+[node name="Torso" type="Position2D" parent="Body"]
+position = Vector2( 0, -0.0971885 )
+
+[node name="Torso" type="Sprite" parent="Body/Torso"]
+texture = ExtResource( 6 )
+
+[node name="Torso2" type="Sprite" parent="Body/Torso"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+z_index = 100
+texture = ExtResource( 6 )
+
+[node name="Head" type="Position2D" parent="Body/Torso"]
+position = Vector2( 0, -10 )
+
+[node name="LeftEye" type="Position2D" parent="Body/Torso/Head"]
+position = Vector2( -1.80154, -1.55919 )
+
+[node name="RightEye" type="Position2D" parent="Body/Torso/Head"]
+position = Vector2( 2.07414, 0.328694 )
+
+[node name="RightArm" type="Position2D" parent="Body/Torso"]
+position = Vector2( 5.74056, 0.209625 )
+
+[node name="LeftArm" type="Position2D" parent="Body/Torso"]
+position = Vector2( -5.63559, -3.10798 )
+
+[node name="Sprite" type="Sprite" parent="Body"]
+show_behind_parent = true
+position = Vector2( 0, 4 )
+texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Celebrate = SubResource( 1 )
+anims/Fists = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+anims/Run = SubResource( 4 )
+
+[node name="SpringySprites" type="Node2D" parent="."]
+
+[node name="Head" parent="SpringySprites" instance=ExtResource( 4 )]
+position = Vector2( 0, -15.0972 )
+texture = ExtResource( 3 )
+stiffness = 4.0
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/Head")
+
+[node name="Head2" parent="SpringySprites" instance=ExtResource( 4 )]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( 0, -15.0972 )
+z_index = 100
+texture = ExtResource( 3 )
+stiffness = 4.0
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/Head")
+
+[node name="LeftEye" parent="SpringySprites" instance=ExtResource( 4 )]
+position = Vector2( -1.80154, -16.6564 )
+texture = ExtResource( 2 )
+stiffness = 3.0
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/Head/LeftEye")
+
+[node name="LeftEye2" parent="SpringySprites" instance=ExtResource( 4 )]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( -1.80154, -16.6564 )
+z_index = 100
+texture = ExtResource( 2 )
+stiffness = 3.0
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/Head/LeftEye")
+
+[node name="RightEye" parent="SpringySprites" instance=ExtResource( 4 )]
+position = Vector2( 2.07414, -14.7685 )
+texture = ExtResource( 2 )
+stiffness = 3.0
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/Head/RightEye")
+
+[node name="RightEye2" parent="SpringySprites" instance=ExtResource( 4 )]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( 2.07414, -14.7685 )
+z_index = 100
+texture = ExtResource( 2 )
+stiffness = 3.0
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/Head/RightEye")
+
+[node name="LeftArm" parent="SpringySprites" instance=ExtResource( 4 )]
+position = Vector2( -5.63559, -8.20517 )
+texture = ExtResource( 1 )
+stiffness = 4.2
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/LeftArm")
+
+[node name="LeftArm2" parent="SpringySprites" instance=ExtResource( 4 )]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( -5.63559, -8.20517 )
+z_index = 100
+texture = ExtResource( 1 )
+stiffness = 4.2
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/LeftArm")
+
+[node name="RightArm" parent="SpringySprites" instance=ExtResource( 4 )]
+position = Vector2( 5.74056, -4.88756 )
+texture = ExtResource( 1 )
+stiffness = 4.2
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/RightArm")
+
+[node name="RightArm2" parent="SpringySprites" instance=ExtResource( 4 )]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( 5.74056, -4.88756 )
+z_index = 100
+texture = ExtResource( 1 )
+stiffness = 4.2
+damping = 0.6
+target_node_path = NodePath("../../Body/Torso/RightArm")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+show_behind_parent = true
+z_index = -1
+
+[node name="Hurtbox" type="Area2D" parent="."]
+visible = false
+position = Vector2( 0, -5 )
+collision_layer = 16
+collision_mask = 80
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2( 0, -5 )
+shape = SubResource( 5 )
+disabled = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MoveTo" type="Position2D" parent="."]
+
+[node name="WanderWait" type="Timer" parent="."]
+one_shot = true
+
+[node name="WanderStuck" type="Timer" parent="."]
+
+[node name="Sick" type="AnimationPlayer" parent="."]
+anims/Get_sick = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ImmunityTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_Hurtbox_area_exited"]
+[connection signal="timeout" from="WanderStuck" to="." method="_on_WanderStuck_timeout"]
+[connection signal="animation_finished" from="Sick" to="." method="_on_Sick_animation_finished"]
+[connection signal="timeout" from="ImmunityTimer" to="." method="_on_ImmunityTimer_timeout"]

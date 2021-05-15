@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/Comfortaa.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/Progress.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Enemies/GuyBad/HeadEyes.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GuyGood/HeadEyes.png" type="Texture" id=4]
+[ext_resource path="res://UI/Scoreboard.gd" type="Script" id=5]
+
+[node name="Scoreboard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2000.0
+margin_bottom = 2000.0
+mouse_filter = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreboardTween" type="Tween" parent="."]
+
+[node name="ShowUpTween" type="Tween" parent="."]
+
+[node name="Backdrop" type="TextureRect" parent="."]
+self_modulate = Color( 0.164706, 0.517647, 0.541176, 0.941176 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -128.0
+margin_top = 102.0
+margin_right = 128.0
+margin_bottom = 168.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BadGuyCounter" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 32.0
+margin_top = 104.0
+margin_right = 224.0
+margin_bottom = 247.0
+rect_min_size = Vector2( 192, 70 )
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BadGuy" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 87.9999
+margin_top = 32.0
+margin_right = 104.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 16, 16 )
+rect_scale = Vector2( 10, 10 )
+texture = ExtResource( 3 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoodGuy" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -240.0
+margin_top = 40.0
+margin_right = -224.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 16, 16 )
+rect_scale = Vector2( 10, 10 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoodGuyCounter" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -128.0
+margin_top = 104.0
+margin_right = 64.0
+margin_bottom = 233.0
+grow_horizontal = 0
+rect_min_size = Vector2( 192, 70 )
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="tween_started" from="ShowUpTween" to="." method="_on_ShowUpTween_tween_started"]

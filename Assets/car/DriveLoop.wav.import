@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DriveLoop.wav-a8cafdc6fcd88ef64fdc7359c91f407c.sample"
+
+[deps]
+
+source_file="res://Assets/car/DriveLoop.wav"
+dest_files=[ "res://.import/DriveLoop.wav-a8cafdc6fcd88ef64fdc7359c91f407c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

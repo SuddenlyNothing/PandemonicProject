@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Fonts/Comfortaa.tres" type="DynamicFont" id=1]
+
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 85.27
+margin_bottom = 19.0
+rect_scale = Vector2( 0.04, 0.04 )
+custom_fonts/font = ExtResource( 1 )
+text = "This is some stuff I want to write How far can this thing go without extending? I really want to know, but I just can't realize how far it will go to follow its passion of increasing the text box size. It will follow the code to the depths of hell"

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/SFX/H Explosion.wav" type="AudioStream" id=1]
+[ext_resource path="res://Weapons/ExplosionRed.gd" type="Script" id=2]
+[ext_resource path="res://Assets/player/weapons/projectiles/ExplosionRed.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Assets/player/weapons/projectiles/ExplosionGreen.tres" type="SpriteFrames" id=4]
+
+[node name="ExplosionRed" type="AnimatedSprite"]
+scale = Vector2( 10, 10 )
+frames = ExtResource( 3 )
+animation = "Explosion"
+speed_scale = 15.0
+script = ExtResource( 2 )
+
+[node name="ExplosionHitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ExplosionHitbox"]
+polygon = PoolVector2Array( -7, 27, -15, 27, -15, 26, -17, 26, -17, 25, -18, 25, -18, 24, -19, 24, -19, 23, -20, 23, -20, 22, -21, 22, -21, 20, -22, 20, -22, 18, -25, 18, -25, 17, -26, 17, -26, 16, -27, 16, -27, 14, -28, 14, -28, 1, -29, 1, -29, -2, -28, -2, -28, -5, -27, -5, -27, -7, -26, -7, -26, -9, -25, -9, -25, -16, -24, -16, -24, -18, -23, -18, -23, -19, -22, -19, -22, -21, -20, -21, -20, -22, -19, -22, -19, -23, -15, -23, -15, -24, -14, -24, -14, -25, -13, -25, -13, -26, -12, -26, -12, -28, -11, -28, -11, -29, -10, -29, -10, -30, -8, -30, -8, -31, -1, -31, -1, -30, 2, -30, 2, -31, 10, -31, 10, -30, 11, -30, 11, -29, 12, -29, 12, -28, 13, -28, 13, -27, 14, -27, 14, -25, 15, -25, 15, -24, 16, -24, 16, -23, 18, -23, 18, -22, 23, -22, 23, -21, 24, -21, 24, -20, 25, -20, 25, -18, 26, -18, 26, -10, 27, -10, 27, -6, 28, -6, 28, -3, 29, -3, 29, 0, 28, 0, 28, 5, 27, 5, 27, 8, 26, 8, 26, 11, 25, 11, 25, 15, 26, 15, 26, 18, 25, 18, 25, 22, 23, 22, 23, 23, 22, 23, 22, 24, 21, 24, 21, 25, 16, 25, 16, 26, 10, 26, 10, 27, 9, 27, 9, 28, 8, 28, 8, 29, -3, 29, -3, 28, -7, 28 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.862745 )
+frames = ExtResource( 4 )
+animation = "Explosion"
+speed_scale = 15.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+[connection signal="animation_finished" from="." to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="." to="." method="_on_AnimatedSprite_frame_changed"]

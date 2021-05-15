@@ -1,0 +1,363 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://UI/WinScreen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/tiles/Background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/tiles/BackShadows.png" type="Texture" id=3]
+[ext_resource path="res://UI/Scoreboard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/Pause.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/tiles/Game Boarder.png" type="Texture" id=6]
+[ext_resource path="res://TrailerScenes/Collision.tscn" type="PackedScene" id=7]
+[ext_resource path="res://TrailerScenes/Navigation2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TrailerScenes/Trees.tscn" type="PackedScene" id=9]
+[ext_resource path="res://TrailerScenes/Buildings.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Warning.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Charecters/BadGuyWeak.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=15]
+[ext_resource path="res://UI/Load.tscn" type="PackedScene" id=16]
+[ext_resource path="res://UI/LoseScreen.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Charecters/Player/Player.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Charecters/GoodGuy.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Charecters/BadGuyCamo.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Levels/MainScene.gd" type="Script" id=22]
+[ext_resource path="res://Charecters/DummyEnemy.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Assets/tiles/Flowers.png" type="Texture" id=24]
+[ext_resource path="res://UI/DialogBox.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Charecters/Boss.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Charecters/BadGuyFast.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/Soundtrack/InfectionsStepNotLoop.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Soundtrack/InfectionsStepLoop.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Soundtrack/WhatABossIntroShort.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Soundtrack/WhatABossNotLoop.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Soundtrack/WhatABossLoop.wav" type="AudioStream" id=32]
+
+[node name="MainScene" type="Node2D"]
+position = Vector2( -2.27954, 3.25647 )
+script = ExtResource( 22 )
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+z_index = -20
+texture = ExtResource( 2 )
+
+[node name="Flowers" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+z_index = -20
+texture = ExtResource( 24 )
+
+[node name="Border" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
+[node name="Shadows" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+z_index = -19
+texture = ExtResource( 3 )
+
+[node name="Navigation2D" parent="." instance=ExtResource( 8 )]
+
+[node name="YSort" type="YSort" parent="."]
+z_index = 1
+
+[node name="Level0" type="YSort" parent="YSort"]
+
+[node name="GoodGuy" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -756, 1240 )
+
+[node name="Head" parent="YSort/Level0/GoodGuy/SpringySprites" index="0"]
+position = Vector2( 0, -15.0972 )
+
+[node name="Head2" parent="YSort/Level0/GoodGuy/SpringySprites" index="1"]
+position = Vector2( 0, -15.0972 )
+
+[node name="LeftEye" parent="YSort/Level0/GoodGuy/SpringySprites" index="2"]
+position = Vector2( -1.80154, -16.6564 )
+
+[node name="LeftEye2" parent="YSort/Level0/GoodGuy/SpringySprites" index="3"]
+position = Vector2( -1.80154, -16.6564 )
+
+[node name="RightEye" parent="YSort/Level0/GoodGuy/SpringySprites" index="4"]
+position = Vector2( 2.07413, -14.7685 )
+
+[node name="RightEye2" parent="YSort/Level0/GoodGuy/SpringySprites" index="5"]
+position = Vector2( 2.07413, -14.7685 )
+
+[node name="LeftArm" parent="YSort/Level0/GoodGuy/SpringySprites" index="6"]
+position = Vector2( -5.63559, -8.20514 )
+
+[node name="LeftArm2" parent="YSort/Level0/GoodGuy/SpringySprites" index="7"]
+position = Vector2( -5.63559, -8.20514 )
+
+[node name="RightArm" parent="YSort/Level0/GoodGuy/SpringySprites" index="8"]
+position = Vector2( 5.74057, -4.88757 )
+
+[node name="RightArm2" parent="YSort/Level0/GoodGuy/SpringySprites" index="9"]
+position = Vector2( 5.74057, -4.88757 )
+
+[node name="ImmunityTimer" parent="YSort/Level0/GoodGuy" index="10"]
+wait_time = 0.001
+
+[node name="GoodGuy2" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -868, 1256 )
+
+[node name="GoodGuy3" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -292, 244 )
+
+[node name="GoodGuy4" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -1132, -516 )
+
+[node name="GoodGuy5" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 1348, 508 )
+
+[node name="GoodGuy6" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 1436, 1148 )
+
+[node name="GoodGuy7" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -1316, 648 )
+
+[node name="GoodGuy8" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 640, -692 )
+
+[node name="GoodGuy9" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 1404, -868 )
+
+[node name="GoodGuy10" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 1756, -1516 )
+
+[node name="GoodGuy11" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 564, -1528 )
+
+[node name="GoodGuy12" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -352, -1488 )
+
+[node name="GoodGuy13" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -1388, -1492 )
+
+[node name="GoodGuy14" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -560, -636 )
+
+[node name="GoodGuy15" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 540, -812 )
+
+[node name="GoodGuy16" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 1664, -984 )
+
+[node name="GoodGuy17" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( 1944, 340 )
+
+[node name="GoodGuy18" parent="YSort/Level0" instance=ExtResource( 19 )]
+position = Vector2( -1360, 1044 )
+
+[node name="BadGuyWeak" parent="YSort/Level0" instance=ExtResource( 14 )]
+position = Vector2( -813.154, 1176.26 )
+do_chase_delay = false
+
+[node name="Level1" type="YSort" parent="YSort"]
+visible = false
+
+[node name="DummyEnemy2" parent="YSort/Level1" instance=ExtResource( 23 )]
+position = Vector2( -1141.42, 1269.81 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy3" parent="YSort/Level1" instance=ExtResource( 23 )]
+position = Vector2( -1167.98, -492.749 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy4" parent="YSort/Level1" instance=ExtResource( 23 )]
+position = Vector2( 44.2571, -613.517 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy5" parent="YSort/Level1" instance=ExtResource( 23 )]
+position = Vector2( 1229.15, -788.972 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy6" parent="YSort/Level1" instance=ExtResource( 23 )]
+position = Vector2( 1306.62, 1102.3 )
+Enemy = ExtResource( 14 )
+
+[node name="Level2" type="YSort" parent="YSort"]
+visible = false
+
+[node name="DummyEnemy3" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( -1156.52, 1218.22 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy5" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( -1350.73, 358.611 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy6" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( -15.4517, -574.704 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy7" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( 1429.95, -819.733 )
+Enemy = ExtResource( 14 )
+
+[node name="DummyEnemy4" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( 1262.59, 1025.97 )
+
+[node name="DummyEnemy8" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( 111.774, 1012.21 )
+
+[node name="DummyEnemy9" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( 1716.86, 166.991 )
+
+[node name="DummyEnemy10" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( -1520.84, -854.425 )
+
+[node name="DummyEnemy11" parent="YSort/Level2" instance=ExtResource( 23 )]
+position = Vector2( 20.92, -1380.27 )
+
+[node name="Level3" type="YSort" parent="YSort"]
+visible = false
+
+[node name="DummyEnemy4" parent="YSort/Level3" instance=ExtResource( 23 )]
+position = Vector2( -1110.87, 1124.79 )
+
+[node name="DummyEnemy6" parent="YSort/Level3" instance=ExtResource( 23 )]
+position = Vector2( 951.482, -606.642 )
+
+[node name="DummyEnemy7" parent="YSort/Level3" instance=ExtResource( 23 )]
+position = Vector2( -438.855, -493.763 )
+
+[node name="DummyEnemy8" parent="YSort/Level3" instance=ExtResource( 23 )]
+position = Vector2( 1191.01, 654.297 )
+
+[node name="DummyEnemy5" parent="YSort/Level3" instance=ExtResource( 23 )]
+position = Vector2( -174.553, -942.525 )
+Enemy = ExtResource( 20 )
+
+[node name="Level4" type="YSort" parent="YSort"]
+visible = false
+
+[node name="DummyEnemy4" parent="YSort/Level4" instance=ExtResource( 23 )]
+position = Vector2( -1031.17, 1069.9 )
+
+[node name="DummyEnemy6" parent="YSort/Level4" instance=ExtResource( 23 )]
+position = Vector2( -967.459, -656.198 )
+
+[node name="DummyEnemy7" parent="YSort/Level4" instance=ExtResource( 23 )]
+position = Vector2( 1785.68, -906.734 )
+
+[node name="DummyEnemy8" parent="YSort/Level4" instance=ExtResource( 23 )]
+position = Vector2( 1782.93, -1625.3 )
+
+[node name="DummyEnemy9" parent="YSort/Level4" instance=ExtResource( 23 )]
+position = Vector2( 75.9828, -1578.5 )
+
+[node name="DummyEnemy5" parent="YSort/Level4" instance=ExtResource( 23 )]
+position = Vector2( -785.751, 494.615 )
+Enemy = ExtResource( 27 )
+
+[node name="DummyEnemy10" parent="YSort/Level4" instance=ExtResource( 23 )]
+position = Vector2( 588.067, 794.708 )
+Enemy = ExtResource( 27 )
+
+[node name="Level5" type="YSort" parent="YSort"]
+visible = false
+
+[node name="DummyEnemy5" parent="YSort/Level5" instance=ExtResource( 23 )]
+position = Vector2( -1019.85, 1094 )
+Enemy = ExtResource( 27 )
+
+[node name="DummyEnemy7" parent="YSort/Level5" instance=ExtResource( 23 )]
+position = Vector2( 1868.28, 778.189 )
+Enemy = ExtResource( 27 )
+
+[node name="DummyEnemy6" parent="YSort/Level5" instance=ExtResource( 23 )]
+position = Vector2( -802.27, 191.769 )
+Enemy = ExtResource( 20 )
+
+[node name="DummyEnemy8" parent="YSort/Level5" instance=ExtResource( 23 )]
+position = Vector2( -551.734, -1443.6 )
+Enemy = ExtResource( 20 )
+
+[node name="Level6" type="YSort" parent="YSort"]
+visible = false
+
+[node name="DummyEnemy6" parent="YSort/Level6" instance=ExtResource( 23 )]
+position = Vector2( -1125.33, 1112.57 )
+
+[node name="DummyEnemy9" parent="YSort/Level6" instance=ExtResource( 23 )]
+position = Vector2( -959.199, 310.154 )
+
+[node name="DummyEnemy7" parent="YSort/Level6" instance=ExtResource( 23 )]
+position = Vector2( 1427.78, 1323.31 )
+Enemy = ExtResource( 20 )
+
+[node name="DummyEnemy14" parent="YSort/Level6" instance=ExtResource( 23 )]
+position = Vector2( -1102.36, -1531.7 )
+Enemy = ExtResource( 20 )
+
+[node name="DummyEnemy8" parent="YSort/Level6" instance=ExtResource( 23 )]
+position = Vector2( -1515.33, 1138.85 )
+Enemy = ExtResource( 27 )
+
+[node name="DummyEnemy15" parent="YSort/Level6" instance=ExtResource( 23 )]
+position = Vector2( 1380.97, -1394.04 )
+Enemy = ExtResource( 27 )
+
+[node name="Level7" type="YSort" parent="YSort"]
+visible = false
+
+[node name="Boss" parent="YSort/Level7" instance=ExtResource( 26 )]
+position = Vector2( -949.032, 1309.42 )
+
+[node name="Buildings" parent="YSort" instance=ExtResource( 10 )]
+
+[node name="Trees" parent="YSort" instance=ExtResource( 9 )]
+
+[node name="Player" parent="YSort" instance=ExtResource( 18 )]
+position = Vector2( -1044.9, 1295.33 )
+
+[node name="Collision" parent="." instance=ExtResource( 7 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 15 )]
+position = Vector2( -1047.18, 1298.59 )
+target_node_path = NodePath("../../MainScene/YSort/Player")
+x_bound = 1250
+y_bound = 1600
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="Warning" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[node name="Scoreboard" parent="CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 5 )]
+
+[node name="WinScreen" parent="CanvasLayer" instance=ExtResource( 1 )]
+
+[node name="LoseScreen" parent="CanvasLayer" instance=ExtResource( 17 )]
+
+[node name="BossDialog" parent="CanvasLayer" instance=ExtResource( 25 )]
+dialog = PoolStringArray( "You fool. Why would you do this\?", "You could have stayed hidden and let everyone get infected.", "But now, I will show you that the virus is not something to be messed with.", "This new strain will be invulnerable to your puny, stupid Sanitization Launcher." )
+
+[node name="Load" parent="CanvasLayer" instance=ExtResource( 16 )]
+
+[node name="Sounds" type="Node2D" parent="."]
+position = Vector2( 2.27954, -3.25647 )
+
+[node name="InfectionStepLoop" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 29 )
+volume_db = -10.0
+
+[node name="InfectionStepNotLoop" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 28 )
+volume_db = -10.0
+
+[node name="WhatABossIntro" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 30 )
+
+[node name="WhatABossNotLoop" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 31 )
+
+[node name="WhatABossLoop" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 32 )
+[connection signal="write_player_pos" from="CanvasLayer/WinScreen" to="." method="_on_WinScreen_write_player_pos"]
+[connection signal="finished" from="Sounds/InfectionStepNotLoop" to="." method="_on_InfectionStepNotLoop_finished"]
+[connection signal="finished" from="Sounds/WhatABossIntro" to="." method="_on_WhatABoss_finished"]
+[connection signal="finished" from="Sounds/WhatABossNotLoop" to="." method="_on_WhatABossNotLoop_finished"]
+
+[editable path="YSort/Level0/GoodGuy"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/Quit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/LoseScreen.gd" type="Script" id=2]
+[ext_resource path="res://UI/Retry.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/Comfortaa.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/SFX/LoseSound.wav" type="AudioStream" id=5]
+
+[node name="LoseScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = -100.0
+mouse_filter = 2
+color = Color( 0.498039, 0.14902, 0.14902, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Too Many Were Infected"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = -100.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.0980392 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="ColorRect2"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -127.0
+margin_top = -698.0
+margin_right = 513.0
+margin_bottom = -538.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 4 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Quit" parent="ColorRect2" instance=ExtResource( 1 )]
+margin_left = 129.0
+margin_top = 233.0
+margin_right = 259.0
+margin_bottom = 287.0
+
+[node name="Retry" parent="ColorRect2" instance=ExtResource( 3 )]
+anchor_left = 0.354717
+anchor_top = 0.720195
+anchor_right = 0.4
+anchor_bottom = 0.749392
+
+[node name="ButtonTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="ColorRect2/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="timeout" from="ButtonTimer" to="." method="_on_ButtonTimer_timeout"]

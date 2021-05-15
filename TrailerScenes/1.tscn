@@ -1,0 +1,204 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Charecters/GoodGuy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TrailerScenes/DummyEnemies.gd" type="Script" id=2]
+[ext_resource path="res://TrailerScenes/InstaAttackBadGuy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/tiles/BackgroundImage.png" type="Texture" id=4]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 1425.85, 230.206, 1760, 64, 1728, 936, 1208, 712, 432, 784, 72, 976, 68.2411, 90.9642, 1082.1, 76.8224, 760, 712 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 4, 7 ), PoolIntArray( 3, 8, 7, 0 ) ]
+outlines = [ PoolVector2Array( 68.2411, 90.9642, 72, 976, 432, 784, 760, 712, 1208, 712, 1728, 936, 1760, 64, 1425.85, 230.206, 1082.1, 76.8224 ) ]
+
+[node name="1" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 504, -560 )
+texture = ExtResource( 4 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 896, 512 )
+current = true
+
+[node name="Enemies" type="YSort" parent="."]
+script = ExtResource( 2 )
+
+[node name="YSort" type="YSort" parent="Enemies"]
+
+[node name="BadGuyWeak" parent="Enemies/YSort" instance=ExtResource( 3 )]
+
+[node name="GoodGuy" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 104, 208 )
+
+[node name="GoodGuy2" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 176, 320 )
+
+[node name="GoodGuy3" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 200, 424 )
+
+[node name="GoodGuy4" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 352, 328 )
+
+[node name="GoodGuy5" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 312, 216 )
+
+[node name="GoodGuy6" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 464, 176 )
+
+[node name="GoodGuy7" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 496, 312 )
+
+[node name="GoodGuy8" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 592, 264 )
+
+[node name="GoodGuy9" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 272, 512 )
+
+[node name="GoodGuy10" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 152, 632 )
+
+[node name="GoodGuy11" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 208, 728 )
+
+[node name="GoodGuy12" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 408, 656 )
+
+[node name="GoodGuy13" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 584, 488 )
+
+[node name="GoodGuy14" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 720, 288 )
+
+[node name="GoodGuy15" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 728, 32 )
+
+[node name="GoodGuy16" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 816, 80 )
+
+[node name="GoodGuy17" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 888, 152 )
+
+[node name="GoodGuy18" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 992, 288 )
+
+[node name="GoodGuy19" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 904, 360 )
+
+[node name="GoodGuy20" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 824, 464 )
+
+[node name="GoodGuy21" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 720, 584 )
+
+[node name="GoodGuy22" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 616, 720 )
+
+[node name="GoodGuy23" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 392, 744 )
+
+[node name="GoodGuy24" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 304, 784 )
+
+[node name="GoodGuy25" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 200, 856 )
+
+[node name="GoodGuy26" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 680, 632 )
+
+[node name="GoodGuy27" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 800, 624 )
+
+[node name="GoodGuy28" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 936, 696 )
+
+[node name="GoodGuy29" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1024, 584 )
+
+[node name="GoodGuy30" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1128, 480 )
+
+[node name="GoodGuy31" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1160, 344 )
+
+[node name="GoodGuy32" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1200, 200 )
+
+[node name="GoodGuy33" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1096, 96 )
+
+[node name="GoodGuy34" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1384, 200 )
+
+[node name="GoodGuy35" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1416, 336 )
+
+[node name="GoodGuy36" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1304, 448 )
+
+[node name="GoodGuy37" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1304, 592 )
+
+[node name="GoodGuy38" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1216, 720 )
+
+[node name="GoodGuy39" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 512, 712 )
+
+[node name="GoodGuy40" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1040, 672 )
+
+[node name="GoodGuy41" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1568, 832 )
+
+[node name="GoodGuy42" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1336, 720 )
+
+[node name="GoodGuy43" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1424, 720 )
+
+[node name="GoodGuy44" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1496, 624 )
+
+[node name="GoodGuy45" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1544, 504 )
+
+[node name="GoodGuy46" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1536, 360 )
+
+[node name="GoodGuy47" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1552, 200 )
+
+[node name="GoodGuy48" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1616, 112 )
+
+[node name="GoodGuy49" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1712, 264 )
+
+[node name="GoodGuy50" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1704, 464 )
+
+[node name="GoodGuy51" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1696, 608 )
+
+[node name="GoodGuy52" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1640, 752 )
+
+[node name="GoodGuy53" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1616, 896 )
+
+[node name="GoodGuy54" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1680, 848 )
+
+[node name="GoodGuy55" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1480, 840 )
+
+[node name="GoodGuy56" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1720, 944 )
+
+[node name="GoodGuy57" parent="Enemies/YSort" instance=ExtResource( 1 )]
+position = Vector2( 1352, 528 )

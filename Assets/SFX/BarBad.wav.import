@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BarBad.wav-0e19d2f9e12a081ac2d7ee9ff65a2f3c.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/BarBad.wav"
+dest_files=[ "res://.import/BarBad.wav-0e19d2f9e12a081ac2d7ee9ff65a2f3c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

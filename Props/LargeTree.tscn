@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/tiles/LargeTree.png" type="Texture" id=1]
+[ext_resource path="res://Props/Tree.gd" type="Script" id=2]
+
+[node name="LargeTree" type="Sprite"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -48 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+position = Vector2( 0, -48 )
+collision_layer = 66
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -2, 34, 2, 34, 2, 27, 28, 27, 28, 25, 0, -46, -28, 27, -2, 27 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"StaticBodies",
+]]
+position = Vector2( 0, -48 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 0, 47 )
+polygon = PoolVector2Array( -2, 1, 2, 1, 2, -7, -2, -7 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="ready" from="Tween" to="." method="_on_Tween_ready"]
